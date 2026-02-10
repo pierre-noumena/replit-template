@@ -28,7 +28,7 @@ You'll need a **Noumena Cloud subscription** (free trial available) to deploy th
 
 1. Go to [Replit](https://replit.com)
 2. Click **Import code or design** → **Import from GitHub**
-3. Paste this URL: `https://github.com/NoumenaDigital/replit-template`
+3. Paste this URL: `https://github.com/NoumenaDigital/npl-replit-starter`
 4. Click **Import from GitHub**
 
 ### Option 2: Fork on GitHub First
