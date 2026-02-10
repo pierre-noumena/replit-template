@@ -55,7 +55,7 @@ function test_full_payment(test: Test) -> {
 function test_cancel(test: Test) -> {
    var iou = Iou['borrower', 'lender'](100);
    iou.cancel['lender']();
-   test.assertEquals(iou.activeState().getOrFail(), Iou.States.cancelled, "IOU should be cancelled");
+   test.assertEquals(iou.activeState().getOrFail(), Iou.States.canceled, "IOU should be canceled");
 };
 
 @test

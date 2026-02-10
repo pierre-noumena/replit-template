@@ -27,7 +27,7 @@ protocol[borrower, lender] Iou(var initialDebt: Number) {
     initial state due;
     state awaitingPaymentConfirmation;
     final state settled;
-    final state cancelled;
+    final state canceled;
 
     var paymentClaim: Optional<Payment> = optionalOf<Payment>();
     var payments: List<Payment> = listOf<Payment>();
@@ -35,7 +35,7 @@ protocol[borrower, lender] Iou(var initialDebt: Number) {
 
     /**
      * Claim a payment has been made towards the IOU.
-     * Can only be called by the borrower while the IOU is due, i.e. before the debt is fully paid or cancelled, and
+     * Can only be called by the borrower while the IOU is due, i.e. before the debt is fully paid or canceled, and
      * while no other payment is awaiting confirmation.
      * @param amount The amount to pay (must be positive and not exceed amount owed)
      */
@@ -78,6 +78,6 @@ protocol[borrower, lender] Iou(var initialDebt: Number) {
     @api
     permission[lender] cancel() | due, awaitingPaymentConfirmation {
         remainingDebt = 0;
-        become cancelled;
+        become canceled;
     };
 }

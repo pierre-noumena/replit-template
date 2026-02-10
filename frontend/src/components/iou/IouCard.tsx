@@ -23,7 +23,7 @@ export function IouCard({ iou, currentUser, onPay, onConfirmPayment, onCancel }:
   const isDue = state === 'due'
   const isAwaitingConfirmation = state === 'awaitingPaymentConfirmation'
   const isSettled = state === 'settled'
-  const isCancelled = state === 'cancelled'
+  const isCancelled = state === 'canceled'
   const isActive = isDue || isAwaitingConfirmation
 
   const handlePaySubmit = (e: React.FormEvent) => {
@@ -36,7 +36,7 @@ export function IouCard({ iou, currentUser, onPay, onConfirmPayment, onCancel }:
   }
 
   return (
-    <div className={`iou-card ${isSettled ? 'settled' : ''} ${isCancelled ? 'cancelled' : ''} ${isAwaitingConfirmation ? 'awaiting-confirmation' : ''}`}>
+    <div className={`iou-card ${isSettled ? 'settled' : ''} ${isCancelled ? 'canceled' : ''} ${isAwaitingConfirmation ? 'awaiting-confirmation' : ''}`}>
       <div className="iou-header">
         <span className={`state-badge ${state}`}>
           {state === 'awaitingPaymentConfirmation' ? 'Awaiting Payment Confirmation' : state}
