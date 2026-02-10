@@ -37,19 +37,17 @@ You'll need a **Noumena Cloud subscription** (free trial available) to deploy th
 2. In Replit, click **Import code or design** → **Import from GitHub**
 3. Select your forked repository
 
-### Option 3: Use as Replit Template
-
-If this is published as a Replit template, simply click **Use Template**.
-
 ---
 
 ## 🚀 Quick Start: With Replit Agent
 
-👉 Start by telling the Replit Agent:
+👉 The Replit Agent might automatically go through the expected setup steps (requiring tenant app slugs, keycloak credentials etc.). If not, start by telling the Replit Agent:
 ```
 Please run first-time setup for this project.
 ```
 Follow the indications about next steps provided by the Agent.
+
+After setup completion (incl. backend deployment to NOUMENA Cloud), the Agent should attempt to run the frontend in Replit's development server. If not, follow the last steps of the alternative Quick Start option below.
 
 ## 🚀 Quick Start: With Preconfiguration and Makefile
 
@@ -93,3 +91,29 @@ This **interactive** setup will:
 7. **Ask if you want to provision test users** (alice, bob, etc.)
 
 > **Already logged in?** Use `make setup-quick` to skip the login prompt.
+
+### 3. Run the Frontend in Dev Server
+
+```bash
+make run
+```
+
+### Optional: Manual Configuration
+
+If you skipped the optional steps during setup, you can run them later:
+
+**Configure Keycloak for Replit** (required for dev mode login):
+```bash
+make keycloak
+```
+Requires `KEYCLOAK_ADMIN_USER` and `KEYCLOAK_ADMIN_PASSWORD` secrets.
+
+**Provision Test Users** (creates alice, bob, etc.):
+```bash
+make users
+```
+
+**Check Environment Setup**:
+```bash
+make preflight
+```
